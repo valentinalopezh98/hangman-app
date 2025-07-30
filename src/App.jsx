@@ -7,6 +7,7 @@ import Word from "./components/Word";
 import Errors from "./components/Errors";
 import Result from "./components/Result";
 import Footer from "./components/Footer";
+import img from './assets/juego-del-ahorcado.png'
 
 function App() {
   const [started, setStarted] = useState(false);
@@ -121,7 +122,7 @@ function App() {
       <>
         <Header />
           <img
-            src="../src/assets/juego-del-ahorcado.png"
+            src={img}
             alt="Juego del ahorcado"
             className="size-80 self-center"
           />
