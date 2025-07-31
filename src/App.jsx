@@ -28,13 +28,11 @@ function App() {
       setWin(false);
       setLoose(false);
     }
-  }, [started]);
-
-  useEffect(() => {
-    if (!started) {
+    else {
       setLetters(dataLetters.map((l) => ({ ...l, clicked: true })));
     }
   }, [started]);
+
 
   useEffect(() => {
     if (word) {
@@ -71,9 +69,9 @@ function App() {
     if (!word) return;
     const completo = progress.every((letra) => letra !== "");
     const wordArray = word.split("");
-    const gano = progress.every((letra, i) => letra === wordArray[i]);
+    const completed = progress.every((letra, i) => letra === wordArray[i]);
 
-    if (!win && completo && gano) {
+    if (!win && completo && completed) {
       setWin(true);
       setStarted(false);
     }
